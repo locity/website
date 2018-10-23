@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+main {
+  transition: all 500ms cubic-bezier(0.675, -0.280, 0.260, 1.295);
+  transition-timing-function: cubic-bezier(0.675, -0.280, 0.260, 1.295);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+}
+
+a.dark {
+  &:link, &:visited, &:active, &:hover {
+    color: #4671D5;
+    &:hover {
+      color: #3661C5;
+    }
+  }
+}
+
+a.impressum-link, 
+a.copywrite-link {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+}
+
+a.copywrite-link {
+  right: auto;
+  left: 10px;
+}
+
+.view-box-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+a {
+  &:link, &:visited, &:active, &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover {
+    color: #ddd;
+  }
+}
+
+.brand {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 1000;
+  h1 {
+    color: #4671D5;
+    display: inline-block;
+    margin: 0 0 0 6px;
+    vertical-align: middle;
+  }
+}

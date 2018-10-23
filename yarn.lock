@@ -4560,6 +4560,13 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
+ng-svg-icon-sprite@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ng-svg-icon-sprite/-/ng-svg-icon-sprite-1.1.0.tgz#b8ed9cc6e19b5a9673b425b1df89f7da8f85ad2c"
+  integrity sha512-92/kGwgaLzPivCacvxV0ZOqMnFAoMIwIhKD8lSbICPtttwOIjOWEV9aG0kXEeH9hZIPWG1XV3NR4rXiJrImaUg==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

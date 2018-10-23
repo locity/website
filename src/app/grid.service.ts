@@ -48,7 +48,6 @@ export class GridService {
     for (const direction of this.directions) {
       links[direction] = this.getLink(key, direction);
     }
-    console.log(links);
     return links;
   }
 
