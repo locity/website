@@ -1,13 +1,17 @@
 <div class="cell" [ngClass]="{'active': cellKey === currentKey, 'blank': cellKey === ''}">
-  <nav>
-    <a *ngIf="links.TL" routerLink="/{{links.TL}}" class="pos-tl">{{links.TL}}</a>
-    <a *ngIf="links.TR" routerLink="/{{links.TR}}" class="pos-tr">{{links.TR}}</a>
-    <a *ngIf="links.BL" routerLink="/{{links.BL}}" class="pos-bl">{{links.BL}}</a>
-    <a *ngIf="links.BR" routerLink="/{{links.BR}}" class="pos-br">{{links.BR}}</a>
-    <a *ngIf="links.L" routerLink="/{{links.L}}" class="pos-l">{{links.L}}</a>
-    <a *ngIf="links.R" routerLink="/{{links.R}}" class="pos-r">{{links.R}}</a>
+  <nav *ngIf="cellKey === currentKey && (links.TL || links.BR)" class="tlbr">
+    <span class="pos-tl"><a *ngIf="links.TL" [routerLink]="getLink(links.TL)">{{links.TL}}</a></span>
+    <span class="pos-br"><a *ngIf="links.BR" [routerLink]="getLink(links.BR)">{{links.BR}}</a></span>
   </nav>
-  <!-- <main *ngIf="cellKey === currentKey">
+  <nav *ngIf="cellKey === currentKey && (links.BL || links.TR)" class="trbl">
+    <span class="pos-tr"><a *ngIf="links.TR" [routerLink]="getLink(links.TR)">{{links.TR}}</a></span>
+    <span class="pos-bl"><a *ngIf="links.BL" [routerLink]="getLink(links.BL)">{{links.BL}}</a></span>
+  </nav>
+  <nav *ngIf="cellKey === currentKey && (links.L || links.R)" class="lr">
+    <span class="pos-l"><a *ngIf="links.L" [routerLink]="getLink(links.L)">{{links.L}}</a></span>
+    <span class="pos-r"><a *ngIf="links.R" [routerLink]="getLink(links.R)">{{links.R}}</a></span>
+  </nav>
+  <main *ngIf="cellKey === currentKey">
     {{content}}
-  </main> -->
+  </main>
 </div>

@@ -4,9 +4,52 @@ main {
 }
 
 nav {
+  width: 100%;
+  height: 100%;
   z-index: 1;
   position: absolute;
-  width: 100%
+  &.tlbr {
+    transform: rotate(60deg);
+  }
+  &.trbl {
+    transform: rotate(-60deg);
+  }
+  span {
+    pointer-events: none;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    display: block;
+    height: 100%;
+    &.pos-l {
+      transform: rotate(-90deg);
+      right: 20%;
+    }
+    &.pos-r {
+      transform: rotate(90deg);
+      left: 20%;
+    }
+    &.pos-tl {
+      transform: rotate(-90deg);
+      right: 20%;
+    }
+    &.pos-tr {
+      transform: rotate(90deg);
+      left: 20%;
+    }
+    &.pos-bl {
+      transform: rotate(90deg);
+      left: -74%;
+    }
+    &.pos-br {
+      transform: rotate(-90deg);
+      right: -74%;
+    }
+  }
+  a {
+    pointer-events: all;
+    font-size: 20px;
+  }
 }
 
 html {
@@ -74,10 +117,9 @@ a {
   }
 }
 
-
-
 .cell {
   position: relative;
+  opacity: 0.4;
   width: 100%;
   height: 67.3%;
   background-color: #64C7CC;
@@ -98,13 +140,7 @@ a {
     transform: rotate(-60deg);
   }
   &.active {
-    background-color: rgb(28, 113, 117);
-    // &:before {
-    //   border-bottom-color: rgb(28, 113, 117);
-    // }
-    // &:after {
-    //   border-top-color: rgb(28, 113, 117);
-    // }
+    opacity: 1;
   }
   &.blank {
     opacity: 0.1;
@@ -203,12 +239,6 @@ main .content {
 .cell-bg {
   fill: #FFD073;
 }
-
-// main {
-//   display: grid;
-//   grid-template-columns: 100% 100% 100% 100% 100% 100%;
-//   transform: translate(-100%, 0);
-// }
 
 .view-box {
   position: relative;

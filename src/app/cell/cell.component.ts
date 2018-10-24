@@ -19,4 +19,7 @@ export class CellComponent implements OnInit {
     this.links = this.grid.getLinks(this.cellKey);
   }
 
+  getLink(key: string): string {
+    return key === 'home' ? '/' : `/${key}`;
+  }
 }

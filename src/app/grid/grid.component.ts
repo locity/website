@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
+import { Location } from '@angular/common';
 import { GridService } from '../grid.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class GridComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private grid: GridService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
     this.cols = this.grid.cols;
     this.layout = this.grid.layout;
@@ -31,26 +33,23 @@ export class GridComponent implements OnInit {
   ngOnInit() {}
 
   setPosition() {
-    console.log('setPos');
     const index = this.layout.indexOf(this.key);
     const row = Math.floor(index / this.cols);
     const col = index % this.cols;
     const offset = row % 2 === 0 ? -25 : 25;
-    console.log(index, row, col);
     this.transform = `translate(${col * -102 + offset}%, ${row * -88 + 21}%)`;
   }
 
   initKey(): void {
     let key = this.route.snapshot.paramMap.get('key');
-    if (key === '' || key === null) {
+    if (key === '' || key === null || this.layout.indexOf(key) === -1) {
       key = 'home';
     }
-    if (this.layout.indexOf(key) === -1) {
-      this.router.navigateByUrl('/');
-    } else {
-      this.key = key;
-      this.setPosition();
+    if (key === 'home') {
+      this.location.go('/');
     }
+    this.key = key;
+    this.setPosition();
   }
 
   getRowClass(index: number): string {
