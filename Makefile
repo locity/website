@@ -1,9 +1,20 @@
 UNAME := $(shell uname)
 
-clean:
-	git push origin --delete gh-pages && git branch -d gh-pages
+publish: build domain commit clean push
 
-publish:
+build:
+	ng build
+
+domain:
+	cp ./src/CNAME ./dist/website/
+
+commit:
+	ga ./dist && gc -m"New build."
+
+clean:
+	git push origin --delete gh-pages
+
+push:
 	git subtree push --prefix dist/website origin gh-pages
 
-.PHONY: publish clean
+.PHONY: publish
