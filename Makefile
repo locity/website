@@ -9,7 +9,7 @@ domain:
 	cp ./src/CNAME ./dist/website/
 
 commit:
-	ga ./dist && gc -m"New build."
+	git add ./dist && git commit -m"New build."
 
 clean:
 	git push origin --delete gh-pages
