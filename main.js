@@ -204,7 +204,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"cell\" [ngClass]=\"{'active': cellKey === currentKey, 'blank': cellKey === ''}\">\n  <nav *ngIf=\"cellKey === currentKey && (links.TL || links.BR)\" class=\"tlbr\">\n    <span class=\"pos-tl\"><a *ngIf=\"links.TL\" [routerLink]=\"getLink(links.TL)\">{{links.TL}}</a></span>\n    <span class=\"pos-br\"><a *ngIf=\"links.BR\" [routerLink]=\"getLink(links.BR)\">{{links.BR}}</a></span>\n  </nav>\n  <nav *ngIf=\"cellKey === currentKey && (links.BL || links.TR)\" class=\"trbl\">\n    <span class=\"pos-tr\"><a *ngIf=\"links.TR\" [routerLink]=\"getLink(links.TR)\">{{links.TR}}</a></span>\n    <span class=\"pos-bl\"><a *ngIf=\"links.BL\" [routerLink]=\"getLink(links.BL)\">{{links.BL}}</a></span>\n  </nav>\n  <nav *ngIf=\"cellKey === currentKey && (links.L || links.R)\" class=\"lr\">\n    <span class=\"pos-l\"><a *ngIf=\"links.L\" [routerLink]=\"getLink(links.L)\">{{links.L}}</a></span>\n    <span class=\"pos-r\"><a *ngIf=\"links.R\" [routerLink]=\"getLink(links.R)\">{{links.R}}</a></span>\n  </nav>\n  <main *ngIf=\"cellKey === currentKey\">\n    {{content}}\n  </main>\n</div>"
+module.exports = "<div class=\"cell\" [ngClass]=\"{'active': cellKey === currentKey, 'blank': cellKey === ''}\">\n  <nav *ngIf=\"cellKey === currentKey && (links.TL || links.BR)\" class=\"tlbr\">\n    <span class=\"pos-tl\"><a *ngIf=\"links.TL\" [routerLink]=\"getLink(links.TL)\">{{links.TL}}</a></span>\n    <span class=\"pos-br\"><a *ngIf=\"links.BR\" [routerLink]=\"getLink(links.BR)\">{{links.BR}}</a></span>\n  </nav>\n  <nav *ngIf=\"cellKey === currentKey && (links.BL || links.TR)\" class=\"trbl\">\n    <span class=\"pos-tr\"><a *ngIf=\"links.TR\" [routerLink]=\"getLink(links.TR)\">{{links.TR}}</a></span>\n    <span class=\"pos-bl\"><a *ngIf=\"links.BL\" [routerLink]=\"getLink(links.BL)\">{{links.BL}}</a></span>\n  </nav>\n  <nav *ngIf=\"cellKey === currentKey && (links.L || links.R)\" class=\"lr\">\n    <span class=\"pos-l\"><a *ngIf=\"links.L\" [routerLink]=\"getLink(links.L)\">{{links.L}}</a></span>\n    <span class=\"pos-r\"><a *ngIf=\"links.R\" [routerLink]=\"getLink(links.R)\">{{links.R}}</a></span>\n  </nav>\n  <main *ngIf=\"cellKey === currentKey\">\n    <h1>{{content}}</h1>\n  </main>\n</div>"
 
 /***/ }),
 
@@ -288,6 +288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridService", function() { return GridService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -299,8 +300,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var GridService = /** @class */ (function () {
-    function GridService() {
+    function GridService(titleService) {
+        this.titleService = titleService;
         this.index = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](0);
         this.position = this.index.asObservable();
         this.cols = 8;
@@ -340,7 +343,15 @@ var GridService = /** @class */ (function () {
         return "Das ist der \"" + key + "\" Content";
     };
     GridService.prototype.setActive = function (index) {
+        this.setTitle(this.layout[index]);
         this.index.next(index);
+    };
+    GridService.prototype.setTitle = function (key) {
+        var title = 'Locity GmbH';
+        if (key !== 'home') {
+            title = key + " - " + title;
+        }
+        this.titleService.setTitle(title);
     };
     GridService.prototype.getLinks = function (key) {
         var links = {};
@@ -402,7 +413,7 @@ var GridService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]])
     ], GridService);
     return GridService;
 }());
