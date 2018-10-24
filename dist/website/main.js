@@ -83,7 +83,7 @@ module.exports = "<a routerLink=\"/\" class=\"brand dark\"><svg-icon src=\"/asse
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".background {\n  height: 140%;\n  width: 140%;\n  background-size: cover;\n  position: absolute;\n  transition: all 500ms linear; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tbGVlL3Byb2plY3RzL2xvY2l0eS93ZWJzaXRlL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBWTtFQUNaLFlBQVc7RUFDWCx1QkFBc0I7RUFDdEIsbUJBQWtCO0VBQ2xCLDZCQUE0QixFQUM3QiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5iYWNrZ3JvdW5kIHtcbiAgaGVpZ2h0OiAxNDAlO1xuICB3aWR0aDogMTQwJTtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0cmFuc2l0aW9uOiBhbGwgNTAwbXMgbGluZWFyO1xufSJdfQ== */"
+module.exports = ".background {\n  height: 140%;\n  width: 140%;\n  background-size: cover;\n  background-position: center;\n  position: absolute;\n  transition: all 750ms ease-in-out; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tbGVlL3Byb2plY3RzL2xvY2l0eS93ZWJzaXRlL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBWTtFQUNaLFlBQVc7RUFDWCx1QkFBc0I7RUFDdEIsNEJBQTJCO0VBQzNCLG1CQUFrQjtFQUNsQixrQ0FBaUMsRUFDbEMiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmFja2dyb3VuZCB7XG4gIGhlaWdodDogMTQwJTtcbiAgd2lkdGg6IDE0MCU7XG4gIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0cmFuc2l0aW9uOiBhbGwgNzUwbXMgZWFzZS1pbi1vdXQ7XG59Il19 */"
 
 /***/ }),
 
