@@ -12,6 +12,15 @@ body {
 main {
   z-index: 1;
   position: relative;
+  height: 118%;
+  width: 70%;
+  top: -9%;
+  left: 15%;
+  color: #fafafa;
+  overflow: scroll;
+  >h1 {
+    text-align: center;
+  }
 }
 
 nav {
@@ -120,11 +129,11 @@ a {
 
 .cell {
   position: relative;
-  opacity: 0.5;
+  opacity: 0.4;
   width: 100%;
   height: 67.3%;
   // background-color: #64C7CC;
-  background-color: #333;
+  background-color: #000;
   margin: 14.433% 0;
   transition: all 500ms linear;
   &:before, &:after {
@@ -149,7 +158,7 @@ a {
   &.blank {
     // opacity: 0.1;
     // opacity: 1;
-    background-color: #333;
+    // background-color: #000;
   }
 }
 

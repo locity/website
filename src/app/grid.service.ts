@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,7 @@ export class GridService {
     }
   };
 
-  constructor() {}
+  constructor(private titleService: Title) {}
 
   getContent(key: string): string {
     if (key === '') {
@@ -47,7 +48,16 @@ export class GridService {
   }
 
   setActive(index: number) {
+    this.setTitle(this.layout[index]);
     this.index.next(index);
+  }
+
+  setTitle(key: string) {
+    let title = 'Locity GmbH';
+    if (key !== 'home') {
+      title = `${key} - ${title}`;
+    }
+    this.titleService.setTitle(title);
   }
 
   getLinks(key: string): unknown {
