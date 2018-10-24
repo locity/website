@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GridService {
-  public cols = 6;
-  private row: number;
-  private index: number;
-  private offset: number;
+  private index: BehaviorSubject<number> = new BehaviorSubject(0);
+  public readonly position: Observable<number> = this.index.asObservable();
+  public cols = 8;
   private directions: direction[] = ['TL', 'TR', 'BL', 'BR', 'L', 'R'];
   public layout = [
-    'kunden', 'kontakt', '', 'digitale-transformation', 'workshop-schulung', '',
-    '', 'home', '', 'websites', 'schwerpunkte', 'ux-prototyping',
-    'offene-stellen', 'team', '', 'mobile-web-app', 'single-page-app', '',
-    '', 'marco-lehmann', 'tobias-krogh', '', '', '',
-    '', '', '', 'impressum'
+    '', '', '', '', '', '', '', '',
+    '', 'kunden', 'kontakt', '', 'digitale-transformation', 'workshop-schulung', '', '',
+    '', 'home', '', 'websites', 'schwerpunkte', 'ux-prototyping', '', '',
+    '', 'offene-stellen', 'team', '', 'mobile-web-app', 'single-page-app', '', '',
+    '', 'marco-lehmann', 'tobias-krogh', '', '', '', '', '',
+    '', '', '', '', '', 'impressum', '', '',
+    '', '', '', '', '', '', '', '',
   ];
+  public rows = Math.floor(this.layout.length / this.cols);
   private cells = {
     home: {
       R: 'schwerpunkte'
@@ -34,7 +37,7 @@ export class GridService {
     }
   };
 
-  constructor() { }
+  constructor() {}
 
   getContent(key: string): string {
     if (key === '') {
@@ -43,59 +46,61 @@ export class GridService {
     return `Das ist der "${key}" Content`;
   }
 
+  setActive(index: number) {
+    this.index.next(index);
+  }
+
   getLinks(key: string): unknown {
     const links: directions = {};
     if (key !== '') {
-      this.index = this.layout.indexOf(key);
-      this.row = Math.floor(this.index / this.cols);
-      this.offset = this.row % 2;
+      const index = this.layout.indexOf(key);
+      const row = Math.floor(index / this.cols);
+      const offset = row % 2;
       for (const direction of this.directions) {
-        links[direction] = this.getLink(key, direction);
+        if (this.cells[key] !== undefined && this.cells[key][direction] !== undefined) {
+          links[direction] = this.cells[key][direction];
+        } else {
+          let linkIndex = -1;
+          switch (direction) {
+            case 'TL':
+              if (Math.floor((index - this.cols - offset) / this.cols) + 1 === row) {
+                linkIndex = index - this.cols - offset;
+              }
+            break;
+            case 'TR':
+              if (Math.floor((index - this.cols - offset + 1) / this.cols) + 1 === row) {
+                linkIndex = index - this.cols - offset + 1;
+              }
+            break;
+            case 'BL':
+              if (Math.floor((index + this.cols - offset) / this.cols) - 1 === row) {
+                linkIndex = index + this.cols - offset;
+              }
+            break;
+            case 'BR':
+              if (Math.floor((index + this.cols - offset + 1) / this.cols) - 1 === row) {
+                linkIndex = index + this.cols - offset + 1;
+              }
+            break;
+            case 'L':
+              if ((index - 1) % this.cols < index % this.cols) {
+                linkIndex = index - 1;
+              }
+            break;
+            case 'R':
+              if ((index + 1) % this.cols > index % this.cols) {
+                linkIndex = index + 1;
+              }
+            break;
+          }
+          if (linkIndex !== -1) {
+            links[direction] = this.layout[linkIndex];
+          } else {
+            links[direction] = '';
+          }
+        }
       }
     }
     return links;
-  }
-
-  private getLink(key: string, direction: direction): string {
-    if (this.cells[key] !== undefined && this.cells[key][direction] !== undefined) {
-      return this.cells[key][direction];
-    }
-    let linkIndex = -1;
-    switch (direction) {
-      case 'TL':
-        if (Math.floor((this.index - this.cols - this.offset) / this.cols) + 1 === this.row) {
-          linkIndex = this.index - this.cols - this.offset;
-        }
-      break;
-      case 'TR':
-        if (Math.floor((this.index - this.cols - this.offset + 1) / this.cols) + 1 === this.row) {
-          linkIndex = this.index - this.cols - this.offset + 1;
-        }
-      break;
-      case 'BL':
-        if (Math.floor((this.index + this.cols - this.offset) / this.cols) - 1 === this.row) {
-          linkIndex = this.index + this.cols - this.offset;
-        }
-      break;
-      case 'BR':
-        if (Math.floor((this.index + this.cols - this.offset + 1) / this.cols) - 1 === this.row) {
-          linkIndex = this.index + this.cols - this.offset + 1;
-        }
-      break;
-      case 'L':
-        if ((this.index - 1) % this.cols < this.index % this.cols) {
-          linkIndex = this.index - 1;
-        }
-      break;
-      case 'R':
-        if ((this.index + 1) % this.cols > this.index % this.cols) {
-          linkIndex = this.index + 1;
-        }
-      break;
-    }
-    if (linkIndex !== -1) {
-      return this.layout[linkIndex];
-    }
-    return '';
   }
 }

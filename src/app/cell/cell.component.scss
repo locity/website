@@ -1,5 +1,6 @@
 :host {
   position: relative;
+  pointer-events: none;
   &:after {
     content: '';
     padding-bottom: 86.6025403784439%;

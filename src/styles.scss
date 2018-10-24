@@ -1,3 +1,14 @@
+html {
+  height: 100%;
+}
+
+body {
+  // background-color: #cc2222;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  height: 100%;
+}
+
 main {
   z-index: 1;
   position: relative;
@@ -52,17 +63,6 @@ nav {
   }
 }
 
-html {
-  height: 100%;
-}
-
-body {
-  background-color: #888888;
-  margin: 0;
-  font-family: Verdana, sans-serif;
-  height: 100%;
-}
-
 a.impressum-link, 
 a.copywrite-link {
   position: fixed;
@@ -87,6 +87,7 @@ a.copywrite-link {
 }
 
 a {
+  user-select: none;
   &:link, &:visited, &:active, &:hover {
     text-decoration: none;
     color: #fff;
@@ -119,11 +120,13 @@ a {
 
 .cell {
   position: relative;
-  opacity: 0.4;
+  opacity: 0.5;
   width: 100%;
   height: 67.3%;
-  background-color: #64C7CC;
+  // background-color: #64C7CC;
+  background-color: #333;
   margin: 14.433% 0;
+  transition: all 500ms linear;
   &:before, &:after {
     content: "";
     position: absolute;
@@ -140,10 +143,13 @@ a {
     transform: rotate(-60deg);
   }
   &.active {
-    opacity: 1;
+    opacity: 0.95;
+    background-color: #4671d5;
   }
   &.blank {
-    opacity: 0.1;
+    // opacity: 0.1;
+    // opacity: 1;
+    background-color: #333;
   }
 }
 
@@ -153,75 +159,6 @@ a {
 
 .even .cell {
   margin: 0 25.5% 0 -25.5%;
-}
-
-.hex-cell {
-  section {
-    transition: opacity 1s ease;
-    opacity: 0;
-  }
-  transition: opacity 1s ease;
-  opacity: .2;
-  transition: all 1s ease;
-  // filter: blur(5px);
-  pointer-events: none;
-  &.active {
-    // filter: blur(0);
-    opacity: .95;
-    pointer-events: auto;
-    section { opacity: 1; }
-    a { opacity: 1; }
-  }
-  a {
-    transition: opacity 1s ease;
-    opacity: 0;
-    &:link, &:visited, &:active, &:hover {
-      text {
-        font-size: 20px;
-        fill: #fff;
-        text-decoration: none;
-      }
-      path {
-        fill: #333;
-        opacity: 0;
-      }
-    }
-    &:hover {
-      text {
-        fill: #eee;
-      }
-      path {
-        opacity: .1;
-      }
-    }
-  }
-  .title {
-    font-size: 36px;
-    fill: #fff;
-  }
-}
-
-.hex-cell section {
-  position: absolute;
-  left: 18%;
-  top: 30%;
-  right: 18%;
-  height: 71%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  color: #333;
-  &>h1 {
-    text-align: center;
-    margin-top: 0;
-  }
-  a {
-    &:link, &:visited, &:active, &:hover {
-      color: #4671D5;
-      &:hover {
-        color: #3661C5;
-      }
-    }
-  }
 }
 
 main .content {

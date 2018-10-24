@@ -34,6 +34,7 @@ export class GridComponent implements OnInit {
 
   setPosition() {
     const index = this.layout.indexOf(this.key);
+    this.grid.setActive(index);
     const row = Math.floor(index / this.cols);
     const col = index % this.cols;
     const offset = row % 2 === 0 ? -25 : 25;

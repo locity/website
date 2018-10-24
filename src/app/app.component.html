@@ -1,5 +1,6 @@
 <a routerLink="/" class="brand dark"><svg-icon src="/assets/icons/locity.svg" [svgStyle]="{ 'width.px':50 }"></svg-icon><h1>Locity</h1></a>
 <div class="view-box-wrapper">
+  <div class="background" [ngStyle]="{'background-image': backgroundImage, top: top, left: left}"></div>
   <div class="view-box">
     <div><div>
       <router-outlet></router-outlet>
