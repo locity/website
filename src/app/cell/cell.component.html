@@ -1,0 +1,13 @@
+<div class="cell" [ngClass]="{'active': cellKey === currentKey, 'blank': cellKey === ''}">
+  <nav>
+    <a *ngIf="links.TL" routerLink="/{{links.TL}}" class="pos-tl">{{links.TL}}</a>
+    <a *ngIf="links.TR" routerLink="/{{links.TR}}" class="pos-tr">{{links.TR}}</a>
+    <a *ngIf="links.BL" routerLink="/{{links.BL}}" class="pos-bl">{{links.BL}}</a>
+    <a *ngIf="links.BR" routerLink="/{{links.BR}}" class="pos-br">{{links.BR}}</a>
+    <a *ngIf="links.L" routerLink="/{{links.L}}" class="pos-l">{{links.L}}</a>
+    <a *ngIf="links.R" routerLink="/{{links.R}}" class="pos-r">{{links.R}}</a>
+  </nav>
+  <!-- <main *ngIf="cellKey === currentKey">
+    {{content}}
+  </main> -->
+</div>

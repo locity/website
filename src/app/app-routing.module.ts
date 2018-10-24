@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { HexagonComponent } from './hexagon/hexagon.component';
+import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: ':key', component: HexagonComponent }
+  { path: 'home', redirectTo: '', pathMatch: 'full'},
+  { path: '', component: GridComponent },
+  { path: ':key', component: GridComponent }
 ];
 
 @NgModule({

@@ -9,12 +9,13 @@ import { GridService } from '../grid.service';
 export class HomeComponent implements OnInit {
   key = 'home';
   content: string;
+  links: unknown;
 
   constructor(private grid: GridService) { }
 
   ngOnInit() {
     this.content = this.grid.getContent(this.key);
-    this.grid.getLinks(this.key);
+    this.links = this.grid.getLinks(this.key);
   }
 
 }

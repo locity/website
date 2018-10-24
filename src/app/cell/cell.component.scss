@@ -1,0 +1,8 @@
+:host {
+  position: relative;
+  &:after {
+    content: '';
+    padding-bottom: 86.6025403784439%;
+    display: block;
+  }
+}

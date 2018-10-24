@@ -4,18 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GridService {
-  private cols = 6;
+  public cols = 6;
   private row: number;
   private index: number;
   private offset: number;
   private directions: direction[] = ['TL', 'TR', 'BL', 'BR', 'L', 'R'];
-  private layout = [
+  public layout = [
     'kunden', 'kontakt', '', 'digitale-transformation', 'workshop-schulung', '',
     '', 'home', '', 'websites', 'schwerpunkte', 'ux-prototyping',
     'offene-stellen', 'team', '', 'mobile-web-app', 'single-page-app', '',
     '', 'marco-lehmann', 'tobias-krogh', '', '', '',
     '', '', '', 'impressum'
-    ];
+  ];
   private cells = {
     home: {
       R: 'schwerpunkte'
@@ -37,16 +37,21 @@ export class GridService {
   constructor() { }
 
   getContent(key: string): string {
+    if (key === '') {
+      return '';
+    }
     return `Das ist der "${key}" Content`;
   }
 
   getLinks(key: string): unknown {
     const links: directions = {};
-    this.index = this.layout.indexOf(key);
-    this.row = Math.floor(this.index / this.cols);
-    this.offset = this.row % 2;
-    for (const direction of this.directions) {
-      links[direction] = this.getLink(key, direction);
+    if (key !== '') {
+      this.index = this.layout.indexOf(key);
+      this.row = Math.floor(this.index / this.cols);
+      this.offset = this.row % 2;
+      for (const direction of this.directions) {
+        links[direction] = this.getLink(key, direction);
+      }
     }
     return links;
   }
@@ -55,7 +60,7 @@ export class GridService {
     if (this.cells[key] !== undefined && this.cells[key][direction] !== undefined) {
       return this.cells[key][direction];
     }
-    let linkIndex = 0;
+    let linkIndex = -1;
     switch (direction) {
       case 'TL':
         if (Math.floor((this.index - this.cols - this.offset) / this.cols) + 1 === this.row) {
@@ -88,6 +93,9 @@ export class GridService {
         }
       break;
     }
-    return this.layout[linkIndex];
+    if (linkIndex !== -1) {
+      return this.layout[linkIndex];
+    }
+    return '';
   }
 }

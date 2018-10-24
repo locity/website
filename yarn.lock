@@ -603,6 +603,13 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+angular-svg-icon@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/angular-svg-icon/-/angular-svg-icon-6.0.1.tgz#0c09e777ad4bc7b5c0465072c1edf769f84f9396"
+  integrity sha512-FeraZv5OedUIbGGpfvQU90A0TEPppUae/W+DL5HpRF64K7mUNSVbz2WLAOsR+FsBKFquqhxWgWmQ54w7VOK9/w==
+  dependencies:
+    tslib "^1.9.0"
+
 ansi-colors@^3.0.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.1.tgz#9638047e4213f3428a11944a7d4b31cba0a3ff95"
@@ -4559,13 +4566,6 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
-
-ng-svg-icon-sprite@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ng-svg-icon-sprite/-/ng-svg-icon-sprite-1.1.0.tgz#b8ed9cc6e19b5a9673b425b1df89f7da8f85ad2c"
-  integrity sha512-92/kGwgaLzPivCacvxV0ZOqMnFAoMIwIhKD8lSbICPtttwOIjOWEV9aG0kXEeH9hZIPWG1XV3NR4rXiJrImaUg==
-  dependencies:
-    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
