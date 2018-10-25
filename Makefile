@@ -1,6 +1,6 @@
 UNAME := $(shell uname)
 
-publish: build domain commit clean push
+publish: build domain commit push
 
 build:
 	ng build

@@ -8,7 +8,7 @@ import { GridService } from './grid.service';
 })
 
 export class AppComponent {
-  readonly images = ['hamburg1.jpg', 'hamburg2.jpg'];
+  readonly images = ['hamburg1.jpg', 'hamburg2.jpg', 'hamburg3.jpg', 'hamburg4.jpg'];
   title = 'Locity GmbH';
   backgroundImage: string;
   top: string;

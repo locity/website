@@ -1,7 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router, NavigationEnd } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { GridService } from '../grid.service';
 
 @Component({
@@ -18,8 +16,7 @@ export class GridComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private grid: GridService,
-    private router: Router,
-    private location: Location
+    private router: Router
   ) {
     this.cols = this.grid.cols;
     this.layout = this.grid.layout;
@@ -37,17 +34,17 @@ export class GridComponent implements OnInit {
     this.grid.setActive(index);
     const row = Math.floor(index / this.cols);
     const col = index % this.cols;
-    const offset = row % 2 === 0 ? -25 : 25;
+    const offset = row % 2 === 0 ? -25.5 : 25.5;
     this.transform = `translate(${col * -102 + offset}%, ${row * -88 + 21}%)`;
   }
 
   initKey(): void {
-    let key = this.route.snapshot.paramMap.get('key');
+    let key = '';
+    if (this.route.snapshot.children[0].params.key !== undefined) {
+      key = this.route.snapshot.children[0].params.key;
+    }
     if (key === '' || key === null || this.layout.indexOf(key) === -1) {
       key = 'home';
-    }
-    if (key === 'home') {
-      this.location.go('/');
     }
     this.key = key;
     this.setPosition();

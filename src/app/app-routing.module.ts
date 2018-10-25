@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GridComponent } from './grid/grid.component';
+import { MetaComponent } from './meta/meta.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: ':key', component: GridComponent }
+  { path: '', component: MetaComponent },
+  { path: ':key', component: MetaComponent }
 ];
 
 @NgModule({

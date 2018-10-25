@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class GridService {
-  private index: BehaviorSubject<number> = new BehaviorSubject(0);
+  public index: BehaviorSubject<number> = new BehaviorSubject(0);
   public readonly position: Observable<number> = this.index.asObservable();
   public cols = 8;
   private directions: direction[] = ['TL', 'TR', 'BL', 'BR', 'L', 'R'];

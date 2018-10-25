@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { CellComponent } from './cell/cell.component';
+import { MetaComponent } from './meta/meta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
-    CellComponent
+    CellComponent,
+    MetaComponent
   ],
   imports: [
     BrowserModule,
