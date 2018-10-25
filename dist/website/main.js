@@ -538,7 +538,7 @@ var GridComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  meta works!\n</p>\n"
+module.exports = ""
 
 /***/ }),
 
