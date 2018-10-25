@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _grid_grid_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grid/grid.component */ "./src/app/grid/grid.component.ts");
+/* harmony import */ var _meta_meta_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./meta/meta.component */ "./src/app/meta/meta.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -46,8 +46,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: ':key', component: _grid_grid_component__WEBPACK_IMPORTED_MODULE_2__["GridComponent"] }
+    { path: '', component: _meta_meta_component__WEBPACK_IMPORTED_MODULE_2__["MetaComponent"] },
+    { path: ':key', component: _meta_meta_component__WEBPACK_IMPORTED_MODULE_2__["MetaComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -72,7 +72,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a routerLink=\"/\" class=\"brand dark\"><svg-icon src=\"/assets/icons/locity.svg\" [svgStyle]=\"{ 'width.px':50 }\"></svg-icon><h1>Locity</h1></a>\n<div class=\"view-box-wrapper\">\n  <div class=\"background\" [ngStyle]=\"{'background-image': backgroundImage, top: top, left: left}\"></div>\n  <div class=\"view-box\">\n    <div><div>\n      <router-outlet></router-outlet>\n    </div></div>\n  </div>\n</div>\n<a routerLink=\"/impressum\" class=\"impressum-link dark\">Impressum</a>\n<a routerLink=\"/\" class=\"copywrite-link dark\">© 2018 Locity GmbH</a>\n"
+module.exports = "<a routerLink=\"/\" class=\"brand dark\"><svg-icon src=\"/assets/icons/locity.svg\" [svgStyle]=\"{ 'width.px':50 }\"></svg-icon><h1>Locity</h1></a>\n<div class=\"view-box-wrapper\">\n  <div class=\"background\" [ngStyle]=\"{'background-image': backgroundImage, top: top, left: left}\"></div>\n  <div class=\"view-box\">\n    <div><div>\n      <router-outlet></router-outlet>\n      <app-grid></app-grid>\n    </div></div>\n  </div>\n</div>\n<a routerLink=\"/impressum\" class=\"impressum-link dark\">Impressum</a>\n<a routerLink=\"/\" class=\"copywrite-link dark\">© 2018 Locity GmbH</a>\n"
 
 /***/ }),
 
@@ -114,7 +114,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(grid) {
         var _this = this;
         this.grid = grid;
-        this.images = ['hamburg1.jpg', 'hamburg2.jpg'];
+        this.images = ['hamburg1.jpg', 'hamburg2.jpg', 'hamburg3.jpg', 'hamburg4.jpg'];
         this.title = 'Locity GmbH';
         this.backgroundStyle = {};
         this.backgroundImage = "url('/assets/" + this.images[Math.floor((Math.random() * this.images.length))] + "')";
@@ -156,12 +156,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _grid_grid_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./grid/grid.component */ "./src/app/grid/grid.component.ts");
 /* harmony import */ var _cell_cell_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cell/cell.component */ "./src/app/cell/cell.component.ts");
+/* harmony import */ var _meta_meta_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./meta/meta.component */ "./src/app/meta/meta.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -178,7 +180,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _grid_grid_component__WEBPACK_IMPORTED_MODULE_6__["GridComponent"],
-                _cell_cell_component__WEBPACK_IMPORTED_MODULE_7__["CellComponent"]
+                _cell_cell_component__WEBPACK_IMPORTED_MODULE_7__["CellComponent"],
+                _meta_meta_component__WEBPACK_IMPORTED_MODULE_8__["MetaComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -456,8 +459,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridComponent", function() { return GridComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _grid_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../grid.service */ "./src/app/grid.service.ts");
+/* harmony import */ var _grid_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../grid.service */ "./src/app/grid.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -470,15 +472,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var GridComponent = /** @class */ (function () {
-    function GridComponent(route, grid, router, location) {
+    function GridComponent(route, grid, router) {
         var _this = this;
         this.route = route;
         this.grid = grid;
         this.router = router;
-        this.location = location;
         this.cols = this.grid.cols;
         this.layout = this.grid.layout;
         this.router.events.subscribe(function (event) {
@@ -493,16 +492,16 @@ var GridComponent = /** @class */ (function () {
         this.grid.setActive(index);
         var row = Math.floor(index / this.cols);
         var col = index % this.cols;
-        var offset = row % 2 === 0 ? -25 : 25;
+        var offset = row % 2 === 0 ? -25.5 : 25.5;
         this.transform = "translate(" + (col * -102 + offset) + "%, " + (row * -88 + 21) + "%)";
     };
     GridComponent.prototype.initKey = function () {
-        var key = this.route.snapshot.paramMap.get('key');
+        var key = '';
+        if (this.route.snapshot.children[0].params.key !== undefined) {
+            key = this.route.snapshot.children[0].params.key;
+        }
         if (key === '' || key === null || this.layout.indexOf(key) === -1) {
             key = 'home';
-        }
-        if (key === 'home') {
-            this.location.go('/');
         }
         this.key = key;
         this.setPosition();
@@ -522,11 +521,73 @@ var GridComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./grid.component.scss */ "./src/app/grid/grid.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _grid_service__WEBPACK_IMPORTED_MODULE_3__["GridService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
+            _grid_service__WEBPACK_IMPORTED_MODULE_2__["GridService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], GridComponent);
     return GridComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/meta/meta.component.html":
+/*!******************************************!*\
+  !*** ./src/app/meta/meta.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  meta works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/meta/meta.component.scss":
+/*!******************************************!*\
+  !*** ./src/app/meta/meta.component.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21ldGEvbWV0YS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/meta/meta.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/meta/meta.component.ts ***!
+  \****************************************/
+/*! exports provided: MetaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MetaComponent", function() { return MetaComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MetaComponent = /** @class */ (function () {
+    function MetaComponent() {
+    }
+    MetaComponent.prototype.ngOnInit = function () {
+    };
+    MetaComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-meta',
+            template: __webpack_require__(/*! ./meta.component.html */ "./src/app/meta/meta.component.html"),
+            styles: [__webpack_require__(/*! ./meta.component.scss */ "./src/app/meta/meta.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MetaComponent);
+    return MetaComponent;
 }());
 
 
