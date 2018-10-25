@@ -220,7 +220,7 @@ $cell_max_width: 800;
 @media screen and (max-width: $cell_min_width + 0px) {
   .cell {
     nav {
-      span a {
+      a {
         font-size: 10px;
       }
     }
@@ -249,28 +249,26 @@ $cell_max_width: 800;
 @media screen and (min-width: $cell_min_width + 1px) and (max-width: $cell_max_width + 0px) {
   .cell {
     nav {
-      span {
-        a {
-          font-size: 2.9vw;
-        }
-        &.pos-l {
-          right: 21%;
-        }
-        &.pos-r {
-          left: 21%;
-        }
-        &.pos-tl {
-          right: 21%;
-        }
-        &.pos-tr {
-          left: 21%;
-        }
-        &.pos-bl {
-          left: -73%;
-        }
-        &.pos-br {
-          right: -73%;
-        }
+      a {
+        font-size: 2.9vw;
+      }
+      .pos-l {
+        right: 21%;
+      }
+      .pos-r {
+        left: 21%;
+      }
+      .pos-tl {
+        right: 21%;
+      }
+      .pos-tr {
+        left: 21%;
+      }
+      .pos-bl {
+        left: -73%;
+      }
+      .pos-br {
+        right: -73%;
       }
     }
     main {
@@ -281,6 +279,32 @@ $cell_max_width: 800;
       h2    { font-size: 3.4vw; }
       h3    { font-size: 3.2vw; }
       h4    { font-size: 3vw; }
+    }
+
+    &.logo {
+      nav {
+        a {
+          font-size: 4.5vw;
+        }
+        .pos-l {
+          right: 17.5%;
+        }
+        .pos-r {
+          left: 17.5%;
+        }
+        .pos-tl {
+          right: 17.5%;
+        }
+        .pos-tr {
+          left: 17.5%;
+        }
+        .pos-bl {
+          left: -68.5%;
+        }
+        .pos-br {
+          right: -68.5%;
+        }
+      }
     }
   }
 }
@@ -300,6 +324,31 @@ $cell_max_width: 800;
       h2    { font-size: 28px; }
       h3    { font-size: 26px; }
       h4    { font-size: 24px; }
+    }
+    &.logo {
+      nav {
+        a {
+          font-size: 38px;
+        }
+        .pos-l {
+          right: 17.5%;
+        }
+        .pos-r {
+          left: 17.5%;
+        }
+        .pos-tl {
+          right: 17.5%;
+        }
+        .pos-tr {
+          left: 17.5%;
+        }
+        .pos-bl {
+          left: -68.5%;
+        }
+        .pos-br {
+          right: -68.5%;
+        }
+      }
     }
   }
 }
