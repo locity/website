@@ -157,12 +157,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _grid_grid_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./grid/grid.component */ "./src/app/grid/grid.component.ts");
 /* harmony import */ var _cell_cell_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cell/cell.component */ "./src/app/cell/cell.component.ts");
 /* harmony import */ var _meta_meta_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./meta/meta.component */ "./src/app/meta/meta.component.ts");
+/* harmony import */ var _logo_logo_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./logo/logo.component */ "./src/app/logo/logo.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -181,7 +183,8 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _grid_grid_component__WEBPACK_IMPORTED_MODULE_6__["GridComponent"],
                 _cell_cell_component__WEBPACK_IMPORTED_MODULE_7__["CellComponent"],
-                _meta_meta_component__WEBPACK_IMPORTED_MODULE_8__["MetaComponent"]
+                _meta_meta_component__WEBPACK_IMPORTED_MODULE_8__["MetaComponent"],
+                _logo_logo_component__WEBPACK_IMPORTED_MODULE_9__["LogoComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -207,7 +210,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"cell\" [ngClass]=\"{'active': cellKey === currentKey, 'blank': cellKey === ''}\">\n  <nav *ngIf=\"cellKey === currentKey && (links.TL || links.BR)\" class=\"tlbr\">\n    <span class=\"pos-tl\"><a *ngIf=\"links.TL\" [routerLink]=\"getLink(links.TL)\">{{links.TL}}</a></span>\n    <span class=\"pos-br\"><a *ngIf=\"links.BR\" [routerLink]=\"getLink(links.BR)\">{{links.BR}}</a></span>\n  </nav>\n  <nav *ngIf=\"cellKey === currentKey && (links.BL || links.TR)\" class=\"trbl\">\n    <span class=\"pos-tr\"><a *ngIf=\"links.TR\" [routerLink]=\"getLink(links.TR)\">{{links.TR}}</a></span>\n    <span class=\"pos-bl\"><a *ngIf=\"links.BL\" [routerLink]=\"getLink(links.BL)\">{{links.BL}}</a></span>\n  </nav>\n  <nav *ngIf=\"cellKey === currentKey && (links.L || links.R)\" class=\"lr\">\n    <span class=\"pos-l\"><a *ngIf=\"links.L\" [routerLink]=\"getLink(links.L)\">{{links.L}}</a></span>\n    <span class=\"pos-r\"><a *ngIf=\"links.R\" [routerLink]=\"getLink(links.R)\">{{links.R}}</a></span>\n  </nav>\n  <main *ngIf=\"cellKey === currentKey\">\n    <h1>{{content}}</h1>\n  </main>\n</div>"
+module.exports = "<div class=\"cell\" [ngClass]=\"{'active': cellKey === currentKey, 'blank': cellKey === '', 'logo': cellKey === 'home'}\">\n  <ng-container *ngIf=\"cellKey === currentKey\">\n    <svg-icon *ngIf=\"cellKey === 'home'\" src=\"/assets/icons/locity.svg\" [svgStyle]=\"{ 'width.%': 100, 'margin-top.%': -28.91 }\"></svg-icon>\n    <nav *ngIf=\"links.TL || links.BR\" class=\"tlbr\">\n      <span class=\"pos-tl\"><a *ngIf=\"links.TL\" [routerLink]=\"getLink(links.TL)\">{{links.TL}}</a></span>\n      <span class=\"pos-br\"><a *ngIf=\"links.BR\" [routerLink]=\"getLink(links.BR)\">{{links.BR}}</a></span>\n    </nav>\n    <nav *ngIf=\"links.BL || links.TR\" class=\"trbl\">\n      <span class=\"pos-tr\"><a *ngIf=\"links.TR\" [routerLink]=\"getLink(links.TR)\">{{links.TR}}</a></span>\n      <span class=\"pos-bl\"><a *ngIf=\"links.BL\" [routerLink]=\"getLink(links.BL)\">{{links.BL}}</a></span>\n    </nav>\n    <nav *ngIf=\"links.L || links.R\" class=\"lr\">\n      <span class=\"pos-l\"><a *ngIf=\"links.L\" [routerLink]=\"getLink(links.L)\">{{links.L}}</a></span>\n      <span class=\"pos-r\"><a *ngIf=\"links.R\" [routerLink]=\"getLink(links.R)\">{{links.R}}</a></span>\n    </nav>\n    <main>\n      <h1>{{content}}</h1>\n    </main>\n  </ng-container>\n</div>"
 
 /***/ }),
 
@@ -218,7 +221,7 @@ module.exports = "<div class=\"cell\" [ngClass]=\"{'active': cellKey === current
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: relative;\n  pointer-events: none; }\n  :host:after {\n    content: '';\n    padding-bottom: 86.6025403784439%;\n    display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tbGVlL3Byb2plY3RzL2xvY2l0eS93ZWJzaXRlL3NyYy9hcHAvY2VsbC9jZWxsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQWtCO0VBQ2xCLHFCQUFvQixFQU1yQjtFQVJEO0lBSUksWUFBVztJQUNYLGtDQUFpQztJQUNqQyxlQUFjLEVBQ2YiLCJmaWxlIjoic3JjL2FwcC9jZWxsL2NlbGwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICY6YWZ0ZXIge1xuICAgIGNvbnRlbnQ6ICcnO1xuICAgIHBhZGRpbmctYm90dG9tOiA4Ni42MDI1NDAzNzg0NDM5JTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgfVxufSJdfQ== */"
+module.exports = ":host {\n  position: relative;\n  pointer-events: none; }\n  :host:after {\n    content: '';\n    padding-bottom: 86.6025403784439%;\n    display: block; }\n  svg-icon {\n  z-index: 1;\n  position: absolute;\n  height: 100%;\n  width: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tbGVlL3Byb2plY3RzL2xvY2l0eS93ZWJzaXRlL3NyYy9hcHAvY2VsbC9jZWxsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQWtCO0VBQ2xCLHFCQUFvQixFQU1yQjtFQVJEO0lBSUksWUFBVztJQUNYLGtDQUFpQztJQUNqQyxlQUFjLEVBQ2Y7RUFHSDtFQUNFLFdBQVU7RUFDVixtQkFBa0I7RUFDbEIsYUFBWTtFQUNaLFlBQVcsRUFDWiIsImZpbGUiOiJzcmMvYXBwL2NlbGwvY2VsbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgJjphZnRlciB7XG4gICAgY29udGVudDogJyc7XG4gICAgcGFkZGluZy1ib3R0b206IDg2LjYwMjU0MDM3ODQ0MzklO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICB9XG59XG5cbnN2Zy1pY29uIHtcbiAgei1pbmRleDogMTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiAxMDAlO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -525,6 +528,113 @@ var GridComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], GridComponent);
     return GridComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/logo/logo.component.html":
+/*!******************************************!*\
+  !*** ./src/app/logo/logo.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/logo/logo.component.scss":
+/*!******************************************!*\
+  !*** ./src/app/logo/logo.component.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host {\n  z-index: 1;\n  position: relative;\n  height: 100%;\n  width: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9tbGVlL3Byb2plY3RzL2xvY2l0eS93ZWJzaXRlL3NyYy9hcHAvbG9nby9sb2dvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVTtFQUNWLG1CQUFrQjtFQUNsQixhQUFZO0VBQ1osWUFBVyxFQUNaIiwiZmlsZSI6InNyYy9hcHAvbG9nby9sb2dvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICB6LWluZGV4OiAxO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/logo/logo.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/logo/logo.component.ts ***!
+  \****************************************/
+/*! exports provided: LogoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogoComponent", function() { return LogoComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LogoComponent = /** @class */ (function () {
+    function LogoComponent() {
+        var _this = this;
+        this.scale = 0.5;
+        this.blueLight = '#6C8CD5';
+        this.blueMiddle = '#4671D5';
+        this.blueDark = '#2A4480';
+        this.points = {
+            p0_250: { x: 0, y: 250 }, p0_750: { x: 0, y: 750 },
+            p130_325: { x: 130, y: 325 }, p130_675: { x: 130, y: 675 },
+            p260_400: { x: 260, y: 400 }, p260_600: { x: 260, y: 600 },
+            p433_0: { x: 433, y: 0 }, p433_150: { x: 433, y: 150 }, p433_300: { x: 433, y: 300 }, p433_700: { x: 433, y: 700 }, p433_850: { x: 433, y: 850 }, p433_1000: { x: 433, y: 1000 },
+            p606_400: { x: 606, y: 400 }, p606_600: { x: 606, y: 600 },
+            p736_325: { x: 736, y: 325 }, p736_675: { x: 736, y: 675 },
+            p866_250: { x: 866, y: 250 }, p866_750: { x: 866, y: 750 }
+        };
+        this.triangles = [
+            { points: [this.points.p0_250, this.points.p130_325, this.points.p0_750], color: this.blueDark }, { points: [this.points.p130_675, this.points.p130_325, this.points.p0_750], color: this.blueDark }, { points: [this.points.p130_675, this.points.p433_850, this.points.p0_750], color: this.blueDark }, { points: [this.points.p433_1000, this.points.p433_850, this.points.p0_750], color: this.blueDark },
+            { points: [this.points.p433_150, this.points.p433_300, this.points.p736_325], color: this.blueDark }, { points: [this.points.p606_400, this.points.p433_300, this.points.p736_325], color: this.blueDark }, { points: [this.points.p606_400, this.points.p606_600, this.points.p736_325], color: this.blueDark }, { points: [this.points.p736_675, this.points.p606_600, this.points.p736_325], color: this.blueDark },
+            { points: [this.points.p736_675, this.points.p866_750, this.points.p736_325], color: this.blueMiddle }, { points: [this.points.p866_250, this.points.p866_750, this.points.p736_325], color: this.blueMiddle }, { points: [this.points.p736_675, this.points.p866_750, this.points.p433_850], color: this.blueMiddle }, { points: [this.points.p433_1000, this.points.p866_750, this.points.p433_850], color: this.blueMiddle },
+            { points: [this.points.p130_325, this.points.p130_675, this.points.p260_600], color: this.blueMiddle }, { points: [this.points.p130_325, this.points.p260_400, this.points.p260_600], color: this.blueMiddle }, { points: [this.points.p130_325, this.points.p260_400, this.points.p433_300], color: this.blueMiddle }, { points: [this.points.p130_325, this.points.p433_150, this.points.p433_300], color: this.blueMiddle },
+            { points: [this.points.p0_250, this.points.p130_325, this.points.p433_0], color: this.blueLight }, { points: [this.points.p433_150, this.points.p130_325, this.points.p433_0], color: this.blueLight }, { points: [this.points.p433_150, this.points.p736_325, this.points.p433_0], color: this.blueLight }, { points: [this.points.p866_250, this.points.p736_325, this.points.p433_0], color: this.blueLight },
+            { points: [this.points.p130_675, this.points.p260_600, this.points.p433_850], color: this.blueLight }, { points: [this.points.p433_700, this.points.p260_600, this.points.p433_850], color: this.blueLight }, { points: [this.points.p433_700, this.points.p606_600, this.points.p433_850], color: this.blueLight }, { points: [this.points.p606_600, this.points.p736_675, this.points.p433_850], color: this.blueLight }
+        ];
+        this.triangle = function (data) {
+            _this.ctx.beginPath();
+            _this.ctx.fillStyle = data.color;
+            data.points.forEach(function (point, index) {
+                if (index === 0) {
+                    _this.ctx.moveTo(point.x * _this.scale, point.y * _this.scale);
+                }
+                else {
+                    _this.ctx.lineTo(point.x * _this.scale, point.y * _this.scale);
+                }
+            });
+            _this.ctx.fill();
+        };
+    }
+    LogoComponent.prototype.ngOnInit = function () {
+    };
+    LogoComponent.prototype.ngAfterViewInit = function () {
+        // this.ctx = this.logo.nativeElement.getContext('2d');
+        // // this.ctx.globalAlpha = 0.8;
+        // this.triangles.forEach(this.triangle);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('logo'),
+        __metadata("design:type", Object)
+    ], LogoComponent.prototype, "logo", void 0);
+    LogoComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-logo',
+            template: __webpack_require__(/*! ./logo.component.html */ "./src/app/logo/logo.component.html"),
+            styles: [__webpack_require__(/*! ./logo.component.scss */ "./src/app/logo/logo.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LogoComponent);
+    return LogoComponent;
 }());
 
 
