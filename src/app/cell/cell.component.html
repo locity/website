@@ -1,6 +1,6 @@
 <div class="cell" [ngClass]="{'active': cellKey === currentKey, 'blank': cellKey === '', 'logo': cellKey === 'home'}">
+  <svg-icon *ngIf="cellKey === 'home'" src="/assets/icons/locity.svg" [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }"></svg-icon>
   <ng-container *ngIf="cellKey === currentKey">
-    <svg-icon *ngIf="cellKey === 'home'" src="/assets/icons/locity.svg" [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }"></svg-icon>
     <nav *ngIf="links.TL || links.BR" class="tlbr">
       <span class="pos-tl"><a *ngIf="links.TL" [routerLink]="getLink(links.TL)">{{links.TL}}</a></span>
       <span class="pos-br"><a *ngIf="links.BR" [routerLink]="getLink(links.BR)">{{links.BR}}</a></span>
@@ -13,7 +13,7 @@
       <span class="pos-l"><a *ngIf="links.L" [routerLink]="getLink(links.L)">{{links.L}}</a></span>
       <span class="pos-r"><a *ngIf="links.R" [routerLink]="getLink(links.R)">{{links.R}}</a></span>
     </nav>
-    <main>
+    <main *ngIf="cellKey !== 'home'">
       <h1>{{content}}</h1>
     </main>
   </ng-container>
