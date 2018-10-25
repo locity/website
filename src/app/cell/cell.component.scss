@@ -7,3 +7,10 @@
     display: block;
   }
 }
+
+svg-icon {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

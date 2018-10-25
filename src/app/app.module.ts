@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { CellComponent } from './cell/cell.component';
 import { MetaComponent } from './meta/meta.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
     CellComponent,
-    MetaComponent
+    MetaComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
