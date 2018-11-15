@@ -11,7 +11,7 @@ export class GridComponent implements OnInit {
   @HostBinding('style.transform') transform: string;
   private key: string;
   private cols: number;
-  private layout: string[];
+  layout: string[];
 
   constructor(
     private route: ActivatedRoute,
