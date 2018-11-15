@@ -44,7 +44,7 @@ export class GridService {
     if (key === '') {
       return '';
     }
-    return `Das ist der "${key}" Content`;
+    return key; // `Das ist der "${key}" Content`;
   }
 
   setActive(index: number) {
