@@ -1,5 +1,7 @@
 <div [ngSwitch]="component" class="cell" [ngClass]="{'active': cellKey === currentKey, 'blank': cellKey === '', 'logo': cellKey === 'home'}">
-  <svg-icon  [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }" *ngIf="cellKey === 'home'" src="/assets/icons/locity.svg"></svg-icon>
+  <svg-icon *ngSwitchCase="'home'" [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }" src="/assets/icons/locity.svg"></svg-icon>
+  <main app-contact *ngSwitchCase="'contact'"></main>
+  <main app-imprint *ngSwitchCase="'imprint'"></main>
   <ng-container *ngIf="cellKey === currentKey">
     <nav *ngIf="links.TL || links.BR" class="tlbr">
       <span *ngIf="links.TL" class="pos-tl"><a routerLink="{{getLink(links.TL)}}">{{getTitle(links.TL)}}</a></span>
@@ -13,6 +15,5 @@
       <span *ngIf="links.L" class="pos-l"><a routerLink="{{getLink(links.L)}}">{{getTitle(links.L)}}</a></span>
       <span *ngIf="links.R" class="pos-r"><a routerLink="{{getLink(links.R)}}">{{getTitle(links.R)}}</a></span>
     </nav>
-    <main app-imprint *ngSwitchCase="'imprint'"></main>
   </ng-container>
 </div>

@@ -33,10 +33,16 @@ export class GridService {
     'marco-lehmann': {
       TL: ''
     },
+    'ux-prototyping': {
+      title: 'UX  Prototyping'
+    },
     impressum: {
       TL: 'home',
       component: 'imprint',
-      title: 'Impressum'
+      title: 'Impressum',
+    },
+    kontakt: {
+      component: 'contact',
     }
   };
 
@@ -73,11 +79,7 @@ export class GridService {
     if (this.cells[key] !== undefined && this.cells[key].title !== undefined) {
       return this.cells[key].title;
     }
-    let title = '';
-    key.split('-').forEach(part => {
-      title += (title === '' ? '' : ' ') + part.charAt(0).toUpperCase() + part.slice(1);
-    });
-    return title;
+    return key.split('-').map(part => `${part.charAt(0).toUpperCase()}${part.slice(1)}`).join(' ');
   }
 
   getLinks(key: string): unknown {
