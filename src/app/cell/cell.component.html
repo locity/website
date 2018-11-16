@@ -1,20 +1,18 @@
-<div class="cell" [ngClass]="{'active': cellKey === currentKey, 'blank': cellKey === '', 'logo': cellKey === 'home'}">
-  <svg-icon *ngIf="cellKey === 'home'" src="/assets/icons/locity.svg" [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }"></svg-icon>
+<div [ngSwitch]="component" class="cell" [ngClass]="{'active': cellKey === currentKey, 'blank': cellKey === '', 'logo': cellKey === 'home'}">
+  <svg-icon  [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }" *ngIf="cellKey === 'home'" src="/assets/icons/locity.svg"></svg-icon>
   <ng-container *ngIf="cellKey === currentKey">
     <nav *ngIf="links.TL || links.BR" class="tlbr">
-      <span class="pos-tl"><a *ngIf="links.TL" [routerLink]="getLink(links.TL)">{{links.TL}}</a></span>
-      <span class="pos-br"><a *ngIf="links.BR" [routerLink]="getLink(links.BR)">{{links.BR}}</a></span>
+      <span *ngIf="links.TL" class="pos-tl"><a routerLink="{{getLink(links.TL)}}">{{getTitle(links.TL)}}</a></span>
+      <span *ngIf="links.BR" class="pos-br"><a routerLink="{{getLink(links.BR)}}">{{getTitle(links.BR)}}</a></span>
     </nav>
     <nav *ngIf="links.BL || links.TR" class="trbl">
-      <span class="pos-tr"><a *ngIf="links.TR" [routerLink]="getLink(links.TR)">{{links.TR}}</a></span>
-      <span class="pos-bl"><a *ngIf="links.BL" [routerLink]="getLink(links.BL)">{{links.BL}}</a></span>
+      <span *ngIf="links.TR" class="pos-tr"><a routerLink="{{getLink(links.TR)}}">{{getTitle(links.TR)}}</a></span>
+      <span *ngIf="links.BL" class="pos-bl"><a routerLink="{{getLink(links.BL)}}">{{getTitle(links.BL)}}</a></span>
     </nav>
     <nav *ngIf="links.L || links.R" class="lr">
-      <span class="pos-l"><a *ngIf="links.L" [routerLink]="getLink(links.L)">{{links.L}}</a></span>
-      <span class="pos-r"><a *ngIf="links.R" [routerLink]="getLink(links.R)">{{links.R}}</a></span>
+      <span *ngIf="links.L" class="pos-l"><a routerLink="{{getLink(links.L)}}">{{getTitle(links.L)}}</a></span>
+      <span *ngIf="links.R" class="pos-r"><a routerLink="{{getLink(links.R)}}">{{getTitle(links.R)}}</a></span>
     </nav>
-    <main *ngIf="cellKey !== 'home'">
-      <h1>{{content}}</h1>
-    </main>
+    <main app-imprint *ngSwitchCase="'imprint'"></main>
   </ng-container>
 </div>

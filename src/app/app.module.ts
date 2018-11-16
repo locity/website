@@ -9,6 +9,8 @@ import { GridComponent } from './grid/grid.component';
 import { CellComponent } from './cell/cell.component';
 import { MetaComponent } from './meta/meta.component';
 import { LogoComponent } from './logo/logo.component';
+import { ContactComponent } from './cell/contact/contact.component';
+import { ImprintComponent } from './cell/imprint/imprint.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { LogoComponent } from './logo/logo.component';
     GridComponent,
     CellComponent,
     MetaComponent,
-    LogoComponent
+    LogoComponent,
+    ContactComponent,
+    ImprintComponent
   ],
   imports: [
     BrowserModule,

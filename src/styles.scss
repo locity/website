@@ -18,10 +18,11 @@ main {
   position: relative;
   height: 118%;
   width: 70%;
-  top: -9%;
+  top: -12%;
   left: 15%;
   color: #fafafa;
   overflow: scroll;
+  pointer-events: auto;
   >h1 {
     text-align: center;
   }
@@ -270,13 +271,13 @@ $cell_max_width: 800;
       }
     }
     main {
-      font-size: 2.9vw;
-      table { font-size: 2.9vw; }
+      font-size: 2.1vw;
+      table { font-size: 2.1vw; }
       &>h1  { font-size: 4vw; }
       h1    { font-size: 3.6vw; }
-      h2    { font-size: 3.4vw; }
-      h3    { font-size: 3.2vw; }
-      h4    { font-size: 3vw; }
+      h2    { font-size: 3.2vw; }
+      h3    { font-size: 2.6vw; }
+      h4    { font-size: 2.4vw; }
     }
 
     &.logo {
@@ -319,9 +320,9 @@ $cell_max_width: 800;
       table { font-size: 18px; }
       &>h1  { font-size: 32px; }
       h1    { font-size: 30px; }
-      h2    { font-size: 28px; }
-      h3    { font-size: 26px; }
-      h4    { font-size: 24px; }
+      h2    { font-size: 24px; }
+      h3    { font-size: 22px; }
+      h4    { font-size: 20px; }
     }
     &.logo {
       nav {

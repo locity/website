@@ -34,7 +34,9 @@ export class GridService {
       TL: ''
     },
     impressum: {
-      TL: 'home'
+      TL: 'home',
+      component: 'imprint',
+      title: 'Impressum'
     }
   };
 
@@ -55,9 +57,27 @@ export class GridService {
   setTitle(key: string) {
     let title = 'Locity GmbH';
     if (key !== 'home') {
-      title = `${key} - ${title}`;
+      title = `${this.getTitle(key)} - ${title}`;
     }
     this.titleService.setTitle(title);
+  }
+
+  getComponent(key: string): string {
+    if (this.cells[key] !== undefined && this.cells[key].component !== undefined) {
+      return this.cells[key].component;
+    }
+    return key;
+  }
+
+  getTitle(key: string): string {
+    if (this.cells[key] !== undefined && this.cells[key].title !== undefined) {
+      return this.cells[key].title;
+    }
+    let title = '';
+    key.split('-').forEach(part => {
+      title += (title === '' ? '' : ' ') + part.charAt(0).toUpperCase() + part.slice(1);
+    });
+    return title;
   }
 
   getLinks(key: string): unknown {
