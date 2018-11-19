@@ -14,7 +14,7 @@ export class GridService {
     '', '', '', '', '', '', '', '',
     '', 'kontakt', 'offene-stellen', '', 'entwicklung', 'frontend-security', '', '',
     '', 'home', '', '', 'leistungen', 'digital-analytics-tracking', '', '',
-    '', 'unsere-kunden', 'unser-team', '', 'digitale-transformation', 'seo', '', '',
+    '', 'kunden', 'team', '', 'digitale-transformation', 'seo', '', '',
     '', 'marco-lehmann', 'tobias-krogh', '', '', '', '', '',
     '', '', '', '', '', 'impressum', '', '',
     '', '', '', '', '', '', '', '',
@@ -29,7 +29,7 @@ export class GridService {
       component: 'services',
     },
     seo: {
-      title: 'SEO'
+      title: 'SEO Audit'
     },
     entwicklung: {
       component: 'development',
@@ -41,10 +41,13 @@ export class GridService {
     'digitale-transformation': {
       component: 'digital-transformation'
     },
-    'unsere-kunden': {
-      BR: ''
+    'kunden': {
+      title: 'Unsere Kunden',
+      BR: '',
+      component: 'clients'
     },
-    'unser-team': {
+    'team': {
+      title: 'Unser Team',
       L: ''
     },
     'marco-lehmann': {
@@ -60,6 +63,9 @@ export class GridService {
     },
     kontakt: {
       component: 'contact',
+    },
+    'offene-stellen': {
+      component: 'jobs'
     }
   };
 

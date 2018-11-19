@@ -31,7 +31,16 @@ main {
   .center {
     text-align: center;
   }
+
+  .hexagon-img {
+    clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  }
+  .team {
+    width: 50%;
+  }
 }
+
+
 
 // .active main {
 //   opacity: 1;

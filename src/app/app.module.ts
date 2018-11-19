@@ -20,6 +20,9 @@ import { DevelopmentComponent } from './cell/development/development.component';
 import { FrontendSecurityComponent } from './cell/frontend-security/frontend-security.component';
 import { DigitalAnalyticsComponent } from './cell/digital-analytics/digital-analytics.component';
 import { SeoComponent } from './cell/seo/seo.component';
+import { JobsComponent } from './cell/jobs/jobs.component';
+import { ClientsComponent } from './cell/clients/clients.component';
+import { TeamComponent } from './cell/team/team.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { SeoComponent } from './cell/seo/seo.component';
     DevelopmentComponent,
     FrontendSecurityComponent,
     DigitalAnalyticsComponent,
-    SeoComponent
+    SeoComponent,
+    JobsComponent,
+    ClientsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
