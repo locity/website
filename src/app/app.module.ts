@@ -14,6 +14,12 @@ import { ImprintComponent } from './cell/imprint/imprint.component';
 import { MarcoLehmannComponent } from './cell/marco-lehmann/marco-lehmann.component';
 import { TobiasKroghComponent } from './cell/tobias-krogh/tobias-krogh.component';
 import { DefaultComponent } from './cell/default/default.component';
+import { ServicesComponent } from './cell/services/services.component';
+import { DigitalTransformationComponent } from './cell/digital-transformation/digital-transformation.component';
+import { DevelopmentComponent } from './cell/development/development.component';
+import { FrontendSecurityComponent } from './cell/frontend-security/frontend-security.component';
+import { DigitalAnalyticsComponent } from './cell/digital-analytics/digital-analytics.component';
+import { SeoComponent } from './cell/seo/seo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { DefaultComponent } from './cell/default/default.component';
     ImprintComponent,
     MarcoLehmannComponent,
     TobiasKroghComponent,
-    DefaultComponent
+    DefaultComponent,
+    ServicesComponent,
+    DigitalTransformationComponent,
+    DevelopmentComponent,
+    FrontendSecurityComponent,
+    DigitalAnalyticsComponent,
+    SeoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,12 @@
     <main app-imprint *ngSwitchCase="'imprint'"></main>
     <main app-tobias-krogh *ngSwitchCase="'tobias-krogh'"></main>
     <main app-marco-lehmann *ngSwitchCase="'marco-lehmann'"></main>
+    <main app-services *ngSwitchCase="'services'"></main>
+    <main app-digital-analytics *ngSwitchCase="'digital-analytics'"></main>
+    <main app-digital-transformation *ngSwitchCase="'digital-transformation'"></main>
+    <main app-frontend-security *ngSwitchCase="'frontend-security'"></main>
+    <main app-development *ngSwitchCase="'development'"></main>
+    <main app-seo *ngSwitchCase="'seo'"></main>
     <main app-default *ngSwitchDefault></main>
     <nav *ngIf="links.TL || links.BR" class="tlbr">
         <span *ngIf="links.TL" class="pos-tl"><a routerLink="{{getLink(links.TL)}}">{{getTitle(links.TL)}}</a></span>

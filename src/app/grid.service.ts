@@ -12,9 +12,9 @@ export class GridService {
   private directions: direction[] = ['TL', 'TR', 'BL', 'BR', 'L', 'R'];
   public layout = [
     '', '', '', '', '', '', '', '',
-    '', 'kunden', 'kontakt', '', 'digitale-transformation', 'workshop-schulung', '', '',
-    '', 'home', '', 'websites', 'schwerpunkte', 'ux-prototyping', '', '',
-    '', 'offene-stellen', 'team', '', 'mobile-web-app', 'single-page-app', '', '',
+    '', 'kontakt', 'offene-stellen', '', 'entwicklung', 'frontend-security', '', '',
+    '', 'home', '', '', 'leistungen', 'digital-analytics-tracking', '', '',
+    '', 'unsere-kunden', 'unser-team', '', 'digitale-transformation', 'seo', '', '',
     '', 'marco-lehmann', 'tobias-krogh', '', '', '', '', '',
     '', '', '', '', '', 'impressum', '', '',
     '', '', '', '', '', '', '', '',
@@ -22,12 +22,29 @@ export class GridService {
   public rows = Math.floor(this.layout.length / this.cols);
   private cells = {
     home: {
-      R: 'schwerpunkte'
+      R: 'leistungen'
     },
-    'offene-stellen': {
+    leistungen: {
+      L: 'home',
+      component: 'services',
+    },
+    seo: {
+      title: 'SEO'
+    },
+    entwicklung: {
+      component: 'development',
+    },
+    'digital-analytics-tracking': {
+      title: 'Digital Analytics (Tracking)',
+      component: 'digital-analytics'
+    },
+    'digitale-transformation': {
+      component: 'digital-transformation'
+    },
+    'unsere-kunden': {
       BR: ''
     },
-    team: {
+    'unser-team': {
       L: ''
     },
     'marco-lehmann': {
