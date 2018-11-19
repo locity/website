@@ -22,7 +22,8 @@ export class GridService {
   public rows = Math.floor(this.layout.length / this.cols);
   private cells = {
     home: {
-      R: 'leistungen'
+      R: 'leistungen',
+      L: 'impressum'
     },
     leistungen: {
       L: 'home',
