@@ -22,7 +22,7 @@ main {
   left: 15%;
   color: #fafafa;
   overflow: scroll;
-  opacity: 0;
+  // opacity: 0;
   pointer-events: auto;
   transition: opacity 500ms linear;
   >h1 {
@@ -33,9 +33,9 @@ main {
   }
 }
 
-.active main {
-  opacity: 1;
-}
+// .active main {
+//   opacity: 1;
+// }
 
 nav {
   width: 100%;
