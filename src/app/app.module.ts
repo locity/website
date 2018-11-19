@@ -13,6 +13,7 @@ import { ContactComponent } from './cell/contact/contact.component';
 import { ImprintComponent } from './cell/imprint/imprint.component';
 import { MarcoLehmannComponent } from './cell/marco-lehmann/marco-lehmann.component';
 import { TobiasKroghComponent } from './cell/tobias-krogh/tobias-krogh.component';
+import { DefaultComponent } from './cell/default/default.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TobiasKroghComponent } from './cell/tobias-krogh/tobias-krogh.component
     ContactComponent,
     ImprintComponent,
     MarcoLehmannComponent,
-    TobiasKroghComponent
+    TobiasKroghComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,

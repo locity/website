@@ -4,6 +4,7 @@
   <main app-imprint *ngSwitchCase="'imprint'"></main>
   <main app-tobias-krogh *ngSwitchCase="'tobias-krogh'"></main>
   <main app-marco-lehmann *ngSwitchCase="'marco-lehmann'"></main>
+  <main app-default *ngSwitchDefault></main>
   <ng-container *ngIf="cellKey === currentKey">
     <nav *ngIf="links.TL || links.BR" class="tlbr">
       <span *ngIf="links.TL" class="pos-tl"><a routerLink="{{getLink(links.TL)}}">{{getTitle(links.TL)}}</a></span>
