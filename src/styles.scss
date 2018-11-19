@@ -22,13 +22,19 @@ main {
   left: 15%;
   color: #fafafa;
   overflow: scroll;
+  opacity: 0;
   pointer-events: auto;
+  transition: opacity 500ms linear;
   >h1 {
     text-align: center;
   }
   .center {
     text-align: center;
   }
+}
+
+.active main {
+  opacity: 1;
 }
 
 nav {
