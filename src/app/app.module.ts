@@ -11,6 +11,8 @@ import { MetaComponent } from './meta/meta.component';
 import { LogoComponent } from './logo/logo.component';
 import { ContactComponent } from './cell/contact/contact.component';
 import { ImprintComponent } from './cell/imprint/imprint.component';
+import { MarcoLehmannComponent } from './cell/marco-lehmann/marco-lehmann.component';
+import { TobiasKroghComponent } from './cell/tobias-krogh/tobias-krogh.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ImprintComponent } from './cell/imprint/imprint.component';
     MetaComponent,
     LogoComponent,
     ContactComponent,
-    ImprintComponent
+    ImprintComponent,
+    MarcoLehmannComponent,
+    TobiasKroghComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,8 @@
   <svg-icon *ngSwitchCase="'home'" [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }" src="/assets/icons/locity.svg"></svg-icon>
   <main app-contact *ngSwitchCase="'contact'"></main>
   <main app-imprint *ngSwitchCase="'imprint'"></main>
+  <main app-tobias-krogh *ngSwitchCase="'tobias-krogh'"></main>
+  <main app-marco-lehmann *ngSwitchCase="'marco-lehmann'"></main>
   <ng-container *ngIf="cellKey === currentKey">
     <nav *ngIf="links.TL || links.BR" class="tlbr">
       <span *ngIf="links.TL" class="pos-tl"><a routerLink="{{getLink(links.TL)}}">{{getTitle(links.TL)}}</a></span>
