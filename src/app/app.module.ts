@@ -47,7 +47,7 @@ import { TeamComponent } from './cell/team/team.component';
     TeamComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     AngularSvgIconModule
