@@ -23,6 +23,8 @@ import { SeoComponent } from './cell/seo/seo.component';
 import { JobsComponent } from './cell/jobs/jobs.component';
 import { ClientsComponent } from './cell/clients/clients.component';
 import { TeamComponent } from './cell/team/team.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { TeamComponent } from './cell/team/team.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    AngularSvgIconModule
+    AngularSvgIconModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

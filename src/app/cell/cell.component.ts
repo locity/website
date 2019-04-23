@@ -27,4 +27,10 @@ export class CellComponent implements OnInit {
   getTitle(key: string): string {
     return this.grid.getTitle(key);
   }
+
+  scroll(event) {
+    const topShadow = event.srcElement.scrollTop > 0;
+    const bottomShadow = (event.srcElement.scrollHeight - event.srcElement.scrollTop - event.srcElement.clientHeight) > 0;
+    console.log(topShadow, bottomShadow);
+  }
 }

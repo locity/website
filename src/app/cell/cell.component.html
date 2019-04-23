@@ -3,7 +3,7 @@
   <ng-container *ngIf="cellKey===currentKey" [ngSwitch]="component">
     <main *ngSwitchCase="'home'"></main>
     <main app-contact *ngSwitchCase="'contact'"></main>
-    <main app-imprint *ngSwitchCase="'imprint'"></main>
+    <main app-imprint (scroll)=scroll($event) *ngSwitchCase="'imprint'"></main>
     <main app-tobias-krogh *ngSwitchCase="'tobias-krogh'"></main>
     <main app-marco-lehmann *ngSwitchCase="'marco-lehmann'"></main>
     <main app-services *ngSwitchCase="'services'"></main>
@@ -11,7 +11,7 @@
     <main app-digital-transformation *ngSwitchCase="'digital-transformation'"></main>
     <main app-frontend-security *ngSwitchCase="'frontend-security'"></main>
     <main app-development *ngSwitchCase="'development'"></main>
-    <main app-seo *ngSwitchCase="'seo'"></main>
+    <main app-seo (scroll)=scroll($event) *ngSwitchCase="'seo'"></main>
     <main app-team *ngSwitchCase="'team'"></main>
     <main app-clients *ngSwitchCase="'clients'"></main>
     <main app-jobs *ngSwitchCase="'jobs'"></main>
