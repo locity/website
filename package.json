@@ -9,10 +9,10 @@
     "start:browser": "node server.js",
     "build:browser": "ng build --aot --prod",
     "serve:ssr": "node dist/server",
-    "build:ssr": "yarn build:client-and-server-bundles && yarn compile:server && yarn copy:robot",
+    "build:ssr": "yarn build:client-and-server-bundles && yarn compile:server && yarn copy:robots",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "build:client-and-server-bundles": "ng build --prod && ng run website:server:production",
-    "copy:robot": "cp src/robot.txt dist/browser/",
+    "copy:robots": "cp src/robots.txt dist/browser/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
