@@ -37,6 +37,7 @@
     "core-js": "^2.6.5",
     "express": "^4.16.4",
     "path": "^0.12.7",
+    "prettier-tslint": "^0.4.2",
     "rxjs": "~6.4.0",
     "typescript": "~3.2.4",
     "zone.js": "~0.9.0"
