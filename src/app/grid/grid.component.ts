@@ -9,9 +9,9 @@ import { GridService } from '../grid.service'
 })
 export class GridComponent implements OnInit {
   @HostBinding('style.transform') transform: string
-  private key: string
+  public key: string
+  public layout: string[]
   private cols: number
-  layout: string[]
 
   constructor(private route: ActivatedRoute, private grid: GridService, private router: Router) {
     this.cols = this.grid.cols

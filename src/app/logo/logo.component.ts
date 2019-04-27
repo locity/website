@@ -21,6 +21,7 @@ export class LogoComponent implements OnInit, AfterViewInit {
   //   p736_325: {x: 736, y: 325}, p736_675: {x: 736, y: 675},
   //   p866_250: {x: 866, y: 250}, p866_750: {x: 866, y: 750}
   // };
+  // tslint:disable: max-line-length
   // private triangles: Triangle[] = [
   //   {points: [this.points.p0_250, this.points.p130_325, this.points.p0_750], color: this.blueDark}, {points: [this.points.p130_675, this.points.p130_325, this.points.p0_750], color: this.blueDark}, {points: [this.points.p130_675, this.points.p433_850, this.points.p0_750], color: this.blueDark}, {points: [this.points.p433_1000, this.points.p433_850, this.points.p0_750], color: this.blueDark},
   //   {points: [this.points.p433_150, this.points.p433_300, this.points.p736_325], color: this.blueDark}, {points: [this.points.p606_400, this.points.p433_300, this.points.p736_325], color: this.blueDark}, {points: [this.points.p606_400, this.points.p606_600, this.points.p736_325], color: this.blueDark}, {points: [this.points.p736_675, this.points.p606_600, this.points.p736_325], color: this.blueDark},
@@ -29,6 +30,7 @@ export class LogoComponent implements OnInit, AfterViewInit {
   //   {points: [this.points.p0_250, this.points.p130_325, this.points.p433_0], color: this.blueLight}, {points: [this.points.p433_150, this.points.p130_325, this.points.p433_0], color: this.blueLight}, {points: [this.points.p433_150, this.points.p736_325, this.points.p433_0], color: this.blueLight}, {points: [this.points.p866_250, this.points.p736_325, this.points.p433_0], color: this.blueLight},
   //   {points: [this.points.p130_675, this.points.p260_600, this.points.p433_850], color: this.blueLight}, {points: [this.points.p433_700, this.points.p260_600, this.points.p433_850], color: this.blueLight}, {points: [this.points.p433_700, this.points.p606_600, this.points.p433_850], color: this.blueLight}, {points: [this.points.p606_600, this.points.p736_675, this.points.p433_850], color: this.blueLight}
   // ];
+  // tslint:enable: max-line-length
 
   constructor() {}
 
