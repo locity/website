@@ -51,7 +51,7 @@
     "prefer-const": true,
     "quotemark": [true, "single"],
     "radix": true,
-    "semicolon": [true, "always"],
+    "semicolon": [false, "always"],
     "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": [
       true,
@@ -63,6 +63,21 @@
         "variable-declaration": "nospace"
       }
     ],
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "imports": "always",
+          "exports": "always",
+          "functions": "never",
+          "typeLiterals": "never"
+        },
+        "esSpecCompliant": true
+      }
+    ],
     "unified-signatures": true,
     "variable-name": false,
     "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
@@ -72,6 +87,7 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+    "component-selector": false
   }
 }

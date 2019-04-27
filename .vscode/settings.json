@@ -1,5 +1,11 @@
 {
   "prettier.printWidth": 200,
   "prettier.tslintIntegration": true,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "avoid"
 }
