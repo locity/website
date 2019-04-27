@@ -9,6 +9,7 @@ import { GridService } from './grid.service';
 export class AppComponent {
   readonly images = ['hamburg1.jpg', 'hamburg2.jpg', 'hamburg3.jpg'];
   private readonly activeImage = Math.floor(Math.random() * this.images.length);
+  copyright = `© ${new Date().getFullYear()} Locity GmbH`;
   title = 'Locity GmbH';
   backgroundImage: string;
   top: string;

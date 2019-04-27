@@ -1,12 +1,17 @@
-<a routerLink="/" class="brand dark"><svg-icon src="/assets/icons/locity.svg" [svgStyle]="{ 'width.px':50 }"></svg-icon><h1>Locity</h1></a>
+<a routerLink="/" class="brand dark"
+  ><svg-icon src="/assets/icons/locity.svg" [svgStyle]="{ 'width.px': 50 }"></svg-icon>
+  <h1>Locity</h1></a
+>
 <div class="view-box-wrapper">
-  <div class="background" [ngStyle]="{'background-image': backgroundImage, top: top, left: left}"></div>
+  <div class="background" [ngStyle]="{ 'background-image': backgroundImage, top: top, left: left }"></div>
   <div class="view-box">
-    <div><div>
-      <router-outlet></router-outlet>
-      <app-grid></app-grid>
-    </div></div>
+    <div>
+      <div>
+        <router-outlet></router-outlet>
+        <app-grid></app-grid>
+      </div>
+    </div>
   </div>
 </div>
 <a routerLink="/impressum" class="impressum-link">Impressum</a>
-<a routerLink="/" class="copywrite-link">© 2018 Locity GmbH</a>
+<a routerLink="/" class="copyright-link">{{ copyright }}</a>
