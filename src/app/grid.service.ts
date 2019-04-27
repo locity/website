@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Title } from '@angular/platform-browser';
-
+import { Injectable } from '@angular/core'
+import { BehaviorSubject, Observable } from 'rxjs'
+import { Title } from '@angular/platform-browser'
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GridService {
-  public index: BehaviorSubject<number> = new BehaviorSubject(0);
-  public readonly position: Observable<number> = this.index.asObservable();
-  public cols = 8;
-  private directions: direction[] = ['TL', 'TR', 'BL', 'BR', 'L', 'R'];
+  public index: BehaviorSubject<number> = new BehaviorSubject(0)
+  public readonly position: Observable<number> = this.index.asObservable()
+  public cols = 8
+  private directions: Direction[] = ['TL', 'TR', 'BL', 'BR', 'L', 'R']
+
+  // prettier-ignore
   public layout = [
     '', '', '', '', '', '', '', '',
     '', 'kontakt', 'offene-stellen', '', 'entwicklung', 'frontend-security', '', '',
@@ -19,43 +20,43 @@ export class GridService {
     '', '', '', '', '', 'impressum', '', '',
     '', '', '', '', '', '', '', '',
   ];
-  public rows = Math.floor(this.layout.length / this.cols);
+  public rows = Math.floor(this.layout.length / this.cols)
   private cells = {
     home: {
       R: 'leistungen',
-      L: 'impressum'
+      L: 'impressum',
     },
     leistungen: {
       L: 'home',
       component: 'services',
     },
     seo: {
-      title: 'SEO Audit'
+      title: 'SEO Audit',
     },
     entwicklung: {
       component: 'development',
     },
     'digital-analytics-tracking': {
       title: 'Digital Analytics (Tracking)',
-      component: 'digital-analytics'
+      component: 'digital-analytics',
     },
     'digitale-transformation': {
-      component: 'digital-transformation'
+      component: 'digital-transformation',
     },
-    'kunden': {
+    kunden: {
       title: 'Unsere Kunden',
       BR: '',
-      component: 'clients'
+      component: 'clients',
     },
-    'team': {
+    team: {
       title: 'Unser Team',
-      L: ''
+      L: '',
     },
     'marco-lehmann': {
-      TL: ''
+      TL: '',
     },
     'ux-prototyping': {
-      title: 'UX  Prototyping'
+      title: 'UX  Prototyping',
     },
     impressum: {
       TL: 'home',
@@ -66,97 +67,100 @@ export class GridService {
       component: 'contact',
     },
     'offene-stellen': {
-      component: 'jobs'
-    }
-  };
+      component: 'jobs',
+    },
+  }
 
   constructor(private titleService: Title) {}
 
   getContent(key: string): string {
     if (key === '') {
-      return '';
+      return ''
     }
-    return key; // `Das ist der "${key}" Content`;
+    return key // `Das ist der "${key}" Content`;
   }
 
   setActive(index: number) {
-    this.setTitle(this.layout[index]);
-    this.index.next(index);
+    this.setTitle(this.layout[index])
+    this.index.next(index)
   }
 
   setTitle(key: string) {
-    let title = 'Locity GmbH';
+    let title = 'Locity GmbH'
     if (key !== 'home') {
-      title = `${this.getTitle(key)} - ${title}`;
+      title = `${this.getTitle(key)} - ${title}`
     }
-    this.titleService.setTitle(title);
+    this.titleService.setTitle(title)
   }
 
   getComponent(key: string): string {
     if (this.cells[key] !== undefined && this.cells[key].component !== undefined) {
-      return this.cells[key].component;
+      return this.cells[key].component
     }
-    return key;
+    return key
   }
 
   getTitle(key: string): string {
     if (this.cells[key] !== undefined && this.cells[key].title !== undefined) {
-      return this.cells[key].title;
+      return this.cells[key].title
     }
-    return key.split('-').map(part => `${part.charAt(0).toUpperCase()}${part.slice(1)}`).join(' ');
+    return key
+      .split('-')
+      .map(part => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+      .join(' ')
   }
 
-  getLinks(key: string): unknown {
-    const links: directions = {};
+  getLinks(key: string): Directions {
+    const links: Directions = {}
     if (key !== '') {
-      const index = this.layout.indexOf(key);
-      const row = Math.floor(index / this.cols);
-      const offset = row % 2;
+      const index = this.layout.indexOf(key)
+      const row = Math.floor(index / this.cols)
+      const offset = row % 2
       for (const direction of this.directions) {
         if (this.cells[key] !== undefined && this.cells[key][direction] !== undefined) {
-          links[direction] = this.cells[key][direction];
+          links[direction] = this.cells[key][direction]
         } else {
-          let linkIndex = -1;
+          let linkIndex = -1
           switch (direction) {
             case 'TL':
               if (Math.floor((index - this.cols - offset) / this.cols) + 1 === row) {
-                linkIndex = index - this.cols - offset;
+                linkIndex = index - this.cols - offset
               }
-            break;
+              break
             case 'TR':
               if (Math.floor((index - this.cols - offset + 1) / this.cols) + 1 === row) {
-                linkIndex = index - this.cols - offset + 1;
+                linkIndex = index - this.cols - offset + 1
               }
-            break;
+              break
             case 'BL':
               if (Math.floor((index + this.cols - offset) / this.cols) - 1 === row) {
-                linkIndex = index + this.cols - offset;
+                linkIndex = index + this.cols - offset
               }
-            break;
+              break
             case 'BR':
               if (Math.floor((index + this.cols - offset + 1) / this.cols) - 1 === row) {
-                linkIndex = index + this.cols - offset + 1;
+                linkIndex = index + this.cols - offset + 1
               }
-            break;
+              break
             case 'L':
               if ((index - 1) % this.cols < index % this.cols) {
-                linkIndex = index - 1;
+                linkIndex = index - 1
               }
-            break;
+              break
             case 'R':
               if ((index + 1) % this.cols > index % this.cols) {
-                linkIndex = index + 1;
+                linkIndex = index + 1
               }
-            break;
+              break
           }
           if (linkIndex !== -1) {
-            links[direction] = this.layout[linkIndex];
+            links[direction] = this.layout[linkIndex]
           } else {
-            links[direction] = '';
+            links[direction] = ''
           }
         }
       }
     }
-    return links;
+    return links
   }
 }

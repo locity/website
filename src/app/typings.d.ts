@@ -1,4 +1,4 @@
-interface directions {
+interface Directions {
   TL?: string
   TR?: string
   BL?: string
@@ -7,7 +7,7 @@ interface directions {
   R?: string
 }
 
-type direction = 'TL' | 'TR' | 'BL' | 'BR' | 'L' | 'R'
+type Direction = 'TL' | 'TR' | 'BL' | 'BR' | 'L' | 'R'
 
 interface Point {
   x: number
