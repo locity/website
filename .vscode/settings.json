@@ -7,5 +7,8 @@
   "prettier.semi": false,
   "prettier.trailingComma": "es5",
   "prettier.bracketSpacing": true,
-  "prettier.arrowParens": "avoid"
+  "prettier.arrowParens": "avoid",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }
