@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { MarcoSteinhoffComponent } from './marco-steinhoff.component'
 
 
 describe('MarcoSteinhoffComponent', () => {
