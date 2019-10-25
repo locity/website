@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
-import { BehaviorSubject, Observable } from 'rxjs'
 import { Title } from '@angular/platform-browser'
+import { BehaviorSubject, Observable } from 'rxjs'
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +16,7 @@ export class GridService {
     '', 'kontakt', 'offene-stellen', '', 'entwicklung', 'frontend-security', '', '',
     '', 'home', '', '', 'leistungen', 'digital-analytics-tracking', '', '',
     '', 'kunden', 'team', '', 'digitale-transformation', 'seo', '', '',
-    '', 'marco-lehmann', 'tobias-krogh', '', '', '', '', '',
+    '', 'marco-steinhoff', 'tobias-krogh', '', '', '', '', '',
     '', '', '', '', '', 'impressum', '', '',
     '', '', '', '', '', '', '', '',
   ];
@@ -52,7 +52,7 @@ export class GridService {
       title: 'Unser Team',
       L: '',
     },
-    'marco-lehmann': {
+    'marco-steinhoff': {
       TL: '',
     },
     'ux-prototyping': {

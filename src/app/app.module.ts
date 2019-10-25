@@ -1,30 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { ServiceWorkerModule } from '@angular/service-worker'
 import { AngularSvgIconModule } from 'angular-svg-icon'
-
+import { environment } from '../environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { GridComponent } from './grid/grid.component'
 import { CellComponent } from './cell/cell.component'
-import { MetaComponent } from './meta/meta.component'
-import { LogoComponent } from './logo/logo.component'
-import { ContactComponent } from './cell/contact/contact.component'
-import { ImprintComponent } from './cell/imprint/imprint.component'
-import { MarcoLehmannComponent } from './cell/marco-lehmann/marco-lehmann.component'
-import { TobiasKroghComponent } from './cell/tobias-krogh/tobias-krogh.component'
-import { DefaultComponent } from './cell/default/default.component'
-import { ServicesComponent } from './cell/services/services.component'
-import { DigitalTransformationComponent } from './cell/digital-transformation/digital-transformation.component'
-import { DevelopmentComponent } from './cell/development/development.component'
-import { FrontendSecurityComponent } from './cell/frontend-security/frontend-security.component'
-import { DigitalAnalyticsComponent } from './cell/digital-analytics/digital-analytics.component'
-import { SeoComponent } from './cell/seo/seo.component'
-import { JobsComponent } from './cell/jobs/jobs.component'
 import { ClientsComponent } from './cell/clients/clients.component'
+import { ContactComponent } from './cell/contact/contact.component'
+import { DefaultComponent } from './cell/default/default.component'
+import { DevelopmentComponent } from './cell/development/development.component'
+import { DigitalAnalyticsComponent } from './cell/digital-analytics/digital-analytics.component'
+import { DigitalTransformationComponent } from './cell/digital-transformation/digital-transformation.component'
+import { FrontendSecurityComponent } from './cell/frontend-security/frontend-security.component'
+import { ImprintComponent } from './cell/imprint/imprint.component'
+import { JobsComponent } from './cell/jobs/jobs.component'
+import { SeoComponent } from './cell/seo/seo.component'
+import { ServicesComponent } from './cell/services/services.component'
 import { TeamComponent } from './cell/team/team.component'
-import { ServiceWorkerModule } from '@angular/service-worker'
-import { environment } from '../environments/environment'
+import { TobiasKroghComponent } from './cell/tobias-krogh/tobias-krogh.component'
+import { GridComponent } from './grid/grid.component'
+import { LogoComponent } from './logo/logo.component'
+import { MetaComponent } from './meta/meta.component'
+
 
 @NgModule({
   declarations: [
@@ -35,7 +34,7 @@ import { environment } from '../environments/environment'
     LogoComponent,
     ContactComponent,
     ImprintComponent,
-    MarcoLehmannComponent,
+    MarcoSteinhoffComponent,
     TobiasKroghComponent,
     DefaultComponent,
     ServicesComponent,
