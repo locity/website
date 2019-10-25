@@ -1,19 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { MarcoLehmannComponent } from './marco-lehmann.component'
 
-describe('MarcoLehmannComponent', () => {
-  let component: MarcoLehmannComponent
-  let fixture: ComponentFixture<MarcoLehmannComponent>
+describe('MarcoSteinhoffComponent', () => {
+  let component: MarcoSteinhoffComponent
+  let fixture: ComponentFixture<MarcoSteinhoffComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MarcoLehmannComponent],
+      declarations: [MarcoSteinhoffComponent],
     }).compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MarcoLehmannComponent)
+    fixture = TestBed.createComponent(MarcoSteinhoffComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
