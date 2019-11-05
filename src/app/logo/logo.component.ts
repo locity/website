@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core'
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-logo',
@@ -6,7 +6,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core'
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent implements OnInit, AfterViewInit {
-  @ViewChild('logo') logo
+  @ViewChild('logo', {static: true}) logo
   // private ctx: any;
   // private scale = 0.5;
   // private blueLight = '#6C8CD5';
