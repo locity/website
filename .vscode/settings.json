@@ -1,6 +1,5 @@
 {
   "prettier.printWidth": 200,
-  "prettier.tslintIntegration": true,
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
@@ -10,5 +9,6 @@
   "prettier.arrowParens": "avoid",
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
-  }
+  },
+  "typescriptHero.imports.insertSemicolons": false
 }

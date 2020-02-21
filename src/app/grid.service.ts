@@ -89,6 +89,8 @@ export class GridService {
     let title = 'Locity GmbH'
     if (key !== 'home') {
       title = `${this.getTitle(key)} - ${title}`
+    } else {
+      title = `${title} - Breathe Love Code`
     }
     this.titleService.setTitle(title)
   }
