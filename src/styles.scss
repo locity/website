@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Maven Pro';
-  src: url('/assets/fonts/MavenPro-Medium.ttf') format('truetype');
+  src: url('/assets/fonts/MavenPro.ttf') format('truetype');
 }
 
 html {
@@ -164,6 +164,7 @@ a {
 }
 
 .cell {
+  font-variation-settings: 'wght' 200;
   position: relative;
   opacity: 0.4;
   width: 100%;
@@ -192,6 +193,16 @@ a {
   }
   &.logo {
     background-color: rgba(0, 0, 0, 0);
+  }
+
+  h1 {
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+  }
+
+  h3 {
+    font-weight: 200;
+    font-variation-settings: 'wght' 200;
   }
 }
 
