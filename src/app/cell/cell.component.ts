@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core'
-import { GridService } from '../grid.service'
+import { Component, Input, OnInit } from '@angular/core'
+import { Directions, GridService } from '../grid.service'
 
 @Component({
   selector: 'app-cell',

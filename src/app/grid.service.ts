@@ -166,3 +166,14 @@ export class GridService {
     return links
   }
 }
+
+export interface Directions {
+  TL?: string
+  TR?: string
+  BL?: string
+  BR?: string
+  L?: string
+  R?: string
+}
+
+export type Direction = 'TL' | 'TR' | 'BL' | 'BR' | 'L' | 'R'
