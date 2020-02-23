@@ -14,3 +14,57 @@ svg-icon {
   height: 100%;
   width: 100%;
 }
+.main-wrapper {
+  height: 118%;
+  width: 70%;
+  top: -10%;
+  left: 15%;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+main {
+  position: relative;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+  margin: -1px;
+  z-index: 1;
+  color: #fafafa;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  pointer-events: auto;
+  > h1 {
+    text-align: center;
+  }
+  .center {
+    text-align: center;
+  }
+
+  .hexagon-img {
+    clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  }
+  .team {
+    width: 50%;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; // IE 10+
+  overflow: -moz-scrollbars-none; // Firefox
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &:empty {
+    display: none;
+  }
+
+  border-radius: 4px;
+  overflow-y: scroll;
+  background-image: linear-gradient(top, #4671d5, rgba(255, 255, 255, 0)), linear-gradient(bottom, #4671d5, rgba(255, 255, 255, 0)),
+    linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), linear-gradient(bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  background-position: 0 0, 0 100%, 0 0, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1.5rem, 100% 1.5rem, 100% 0.5rem, 100% 0.5rem;
+  background-attachment: local, local, scroll, scroll;
+}
