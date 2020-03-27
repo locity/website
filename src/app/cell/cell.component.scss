@@ -61,8 +61,8 @@ main {
 
   border-radius: 4px;
   overflow-y: scroll;
-  background-image: linear-gradient(top, #4671d5, rgba(255, 255, 255, 0)), linear-gradient(bottom, #4671d5, rgba(255, 255, 255, 0)),
-    linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), linear-gradient(bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to bottom, #4671d5, rgba(255, 255, 255, 0)), linear-gradient(to top, #4671d5, rgba(255, 255, 255, 0)),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
   background-position: 0 0, 0 100%, 0 0, 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 1.5rem, 100% 1.5rem, 100% 0.5rem, 100% 0.5rem;
