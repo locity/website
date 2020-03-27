@@ -1,5 +1,6 @@
 <div class="cell" [ngClass]="{ active: cellKey === currentKey, blank: cellKey === '', logo: cellKey === 'home' }">
   <svg-icon *ngIf="cellKey === 'home'" [svgStyle]="{ 'width.%': 100, 'margin-top.%': -28.91 }" src="/assets/icons/locity.svg"></svg-icon>
+  <svg-icon *ngIf="cellKey === 'home'" [svgStyle]="{ 'width.%': 30, 'margin-top.%': 16, 'margin-left.%': 35 }" src="/assets/image/breathe-love-code.svg"></svg-icon>
   <ng-container *ngIf="cellKey === currentKey" [ngSwitch]="component">
     <div class="main-wrapper">
       <main *ngSwitchCase="'home'"></main>
